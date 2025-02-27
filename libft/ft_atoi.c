@@ -6,23 +6,28 @@
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 23:49:48 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/20 21:50:17 by yel-mota         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:56:10 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftlibft.h"
 
-int	ft_atoi(char *ptr)
+long	ft_atoi(char *ptr)
 {
-	int (sins), (res);
+	int (sins), (i);
+	long res;
 	if (!ptr)
 		return (0);
 	while (' ' == *ptr || (*ptr >= 9 && *ptr <= 13))
 		ptr++;
 	sins = 1;
-	if (*ptr == '+' || *ptr == '-')
+	i = 0;
+	while (*ptr == '+' || *ptr == '-')
+	{
 		if (*ptr++ == '-')
 			sins = -1;
+		
+	}
 	res = 0;
 	while (('0' <= *ptr && *ptr <= '9') && *ptr != '\0')
 	{

@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRC = push_swap.c ft_strlcpy.c ft_substr.c ft_split.c ft_strdup.c ft_printf/ft_countnbr.c ft_printf/ft_putnbr_base.c libft/ft_strlen.c \
       ft_printf/ft_nbr.c ft_printf/ft_putadress.c ft_printf/ft_putone.c ft_printf/ft_unint.c \
-      ft_printf/ft_printf.c ft_printf/ft_putchar.c ft_printf/ft_putstr.c libft/ft_atoi.c libft/ft_isalpha.c 
+      ft_printf/ft_printf.c ft_printf/ft_putchar.c ft_printf/ft_putstr.c libft/ft_atoi.c ft_check_errors.c 
 
 OBJ = $(SRC:.c=.o)
 
