@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_shift_stuck_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 23:49:48 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/25 09:56:10 by yel-mota         ###   ########.fr       */
+/*   Created: 2025/03/13 20:19:12 by yel-mota          #+#    #+#             */
+/*   Updated: 2025/03/21 01:46:22 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftlibft.h"
+#include "checker_bonus.h"
 
-long	ft_atoi(char *ptr)
+void	ft_shift_up_bonus(t_lst **ls)
 {
-	int (sins), (i);
-	long res;
-	if (!ptr)
-		return (0);
-	while (' ' == *ptr || (*ptr >= 9 && *ptr <= 13))
-		ptr++;
-	sins = 1;
-	i = 0;
-	while (*ptr == '+' || *ptr == '-')
-	{
-		if (*ptr++ == '-')
-			sins = -1;
-		
-	}
-	res = 0;
-	while (('0' <= *ptr && *ptr <= '9') && *ptr != '\0')
-	{
-		res = res * 10 + *ptr - '0';
-		ptr++;
-	}
-	return (res * sins);
+	t_lst	*tmp;
+
+	if (*ls == NULL || (*ls)->next == NULL)
+		return ;
+	tmp = ft_lstlast_bonus(*ls);
+	tmp->next = *ls;
+	tmp = (*ls)->next;
+	(*ls)->next = NULL;
+	*ls = tmp;
 }

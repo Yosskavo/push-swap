@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlenght_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 02:14:18 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/20 00:11:46 by yel-mota         ###   ########.fr       */
+/*   Created: 2025/03/07 20:37:22 by yel-mota          #+#    #+#             */
+/*   Updated: 2025/03/21 08:32:39 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftlibft.h"
+#include "checker_bonus.h"
 
-int	ft_strlen(const char *str)
+int	ft_lenght_of_table_bonus(char **str)
 {
-	int	i;
-
+	int (i);
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != NULL)
 		i++;
 	return (i);
 }

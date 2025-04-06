@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putadress.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 18:14:02 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/22 23:05:21 by yel-mota         ###   ########.fr       */
+/*   Created: 2024/11/17 21:38:18 by yel-mota          #+#    #+#             */
+/*   Updated: 2025/03/08 20:37:06 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	ft_adress(unsigned long nbr)
 {
-	size_t	i;
-	char	*str;
+	int				i;
+	char			*base;
+	unsigned int	basel;
 
-	if (s == NULL)
-		return (NULL);
-	if (ft_strlen(s) <= start)
-		return (ft_strdup(""));
-	if (ft_strlen(s) <= start + len)
-		str = malloc(ft_strlen(s) - start + 1);
-	else
-		str = malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	while (s[start + i] != '\0' && i < len)
+	base = "0123456789abcdef";
+	basel = 16;
+	if (nbr < basel)
 	{
-		str[i] = s[start + i];
-		i++;
+		i += ft_putchar(base[nbr]);
 	}
-	str[i] = '\0';
-	return (str);
+	else
+	{
+		i += ft_adress(nbr / basel);
+		i += ft_adress(nbr % basel);
+	}
+	return (i);
+}
+
+int	ft_putaddress(void *p)
+{
+	int	i;
+
+	if (p == 0)
+		return (ft_putstr("(nil)"));
+	i = 0;
+	i += ft_putstr("0x");
+	i += ft_adress((unsigned long)p);
+	return (i);
 }

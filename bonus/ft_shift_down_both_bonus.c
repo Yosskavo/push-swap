@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_shift_down_both_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 21:35:57 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/22 23:05:14 by yel-mota         ###   ########.fr       */
+/*   Created: 2025/03/13 20:19:19 by yel-mota          #+#    #+#             */
+/*   Updated: 2025/03/21 01:26:50 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	ft_shift_down_both_bonus(t_lst **a, t_lst **b)
 {
-	size_t	m;
-	size_t	i;
-
-	i = ft_strlen(src);
-	m = 0;
-	if (size != 0)
-	{
-		while (src[m] != '\0' && m < size - 1)
-		{
-			dest[m] = src[m];
-			m++;
-		}
-		dest[m] = '\0';
-	}
-	return (i);
+	ft_shift_down_bonus(a);
+	ft_shift_down_bonus(b);
 }

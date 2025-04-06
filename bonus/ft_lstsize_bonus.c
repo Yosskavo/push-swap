@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftlibft.h                                          :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mota <yel-mota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 23:48:05 by yel-mota          #+#    #+#             */
-/*   Updated: 2025/02/25 10:36:46 by yel-mota         ###   ########.fr       */
+/*   Created: 2024/11/08 04:55:21 by yel-mota          #+#    #+#             */
+/*   Updated: 2025/03/21 01:07:32 by yel-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTLIBFT_H
-# define FTLIBFT_H
+#include "checker_bonus.h"
 
-int	ft_strlen(const char *str);
-long	ft_atoi(char *ptr);
-int	ft_isdigit(int c);
+int	ft_lstsize_bonus(t_lst *lst)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
